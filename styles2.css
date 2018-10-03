@@ -1,0 +1,298 @@
+
+html{
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(90deg, #0f0c1f, #221535, #16162d);
+
+    --light-purple: #9f0050;
+    --lighter-purple: #ff1298;
+    --dark-purple:#221535;
+    --even-lighter-purple: #ff53b1;
+}
+
+
+.container{
+
+    display:flex;
+    width:96vw;
+    height: 96vh;
+
+    position: absolute;
+
+    /*border: 1px solid white;*/
+    left: 2vw;
+    top: 2vh;
+
+    justify-content: space-evenly;
+    /*align-items: center;*/
+
+}
+
+.friends{
+    max-width: 25%;
+    flex-grow: 1;
+
+    border-radius: 10px 0 0 10px;
+
+    background: rgba(52,23,73,0.5);
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.chat{
+    flex-grow: 2;
+    max-width: 70%;
+    /*border:1px solid white;*/
+    border-radius: 0 10px 10px 0;
+
+      /*rgba(52,23,73,0.5);*/
+    background-image: url("purple5.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    display:flex;
+    flex-direction: column;
+
+}
+
+.header{
+    border:1px solid white;
+    flex-grow: 1;
+}
+
+.message-bar{
+    border:1px solid white;
+    flex-grow: 10;
+}
+
+.field{
+    border:1px solid white;
+    flex-grow: 2;
+    max-height: 15%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search{
+    color: var(--light-purple);
+    max-height: 6%;
+    width: 90%;
+    flex-grow: 1;
+
+    border-radius: 5px;
+    position:relative;
+}
+
+.conversations{
+    height: 90%;
+    width: 100%;
+
+
+
+    display:flex;
+    flex-direction: column;
+    /*justify-content:space-evenly;*/
+
+    overflow-y: scroll;
+
+}
+
+.conversations::-webkit-scrollbar {
+    width: 10px;
+    transition: background .4s
+
+}
+
+/* Track */
+.conversations::-webkit-scrollbar-track {
+    background: #0f0c1f;
+    border-radius: 10px;
+
+
+}
+
+/* Handle */
+.conversations::-webkit-scrollbar-thumb {
+    background: #6b0035;
+    border-radius: 10px;
+
+
+}
+
+/* Handle on hover */
+.conversations::-webkit-scrollbar-thumb:hover {
+    background: var(--light-purple);
+}
+
+
+.friend{
+    /*flex-grow: 1;*/
+
+    max-height: 13%;
+    min-height: 13%;
+
+
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+
+
+
+    transition: all .4s;
+}
+
+.friend:after{
+
+    left:0;
+    width:0;
+    height: 100%;
+    background: #300093;/*rgba(0,0,0,0.5);*/
+
+    content: '.';
+
+    position: absolute;
+    color:transparent;
+
+    z-index: -1;
+
+    transition: width .4s;
+}
+
+.friend:hover:after{
+    width: 100%;
+}
+
+.friend:hover{
+
+
+
+}
+
+.image{
+
+    height: 100%;
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+    border:1px solid var(--light-purple);
+
+}
+
+.info{
+    width: 70%;
+
+
+    height: 8vh;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.name{
+    /*border:1px solid white;*/
+    flex-grow: 1;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 2vh;
+
+    color: var(--light-purple);
+}
+
+.message{
+   /* border:1px solid white;*/
+    color: var(--lighter-purple);
+    flex-grow: 1;
+    width: 100%;
+
+    font-size: 2vh;
+}
+
+.avatar{
+    height: 7vh;
+    margin:auto;
+}
+
+
+
+.focused{
+
+    border-left: 3px solid var(--lighter-purple);
+
+}
+
+
+.search-inp{
+
+    position: absolute;
+    box-sizing: border-box;
+    padding-left: 20%;
+    height: 100%;
+
+
+    background: none;
+    outline: none;
+    /*border:none;*/
+    width:100%;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 120%;
+
+    border: 1px solid var(--light-purple);
+
+    transition: all .5s;
+}
+
+
+
+.search-inp::placeholder{
+    color: var(--light-purple);
+    transition: all .6s;
+}
+
+.search-inp:focus + div{
+    color:var(--lighter-purple);
+}
+
+.search-inp:focus::placeholder{
+    color: var(--lighter-purple);
+}
+
+.search-inp:focus{
+    color:var(--lighter-purple);
+    border-color: var(--lighter-purple);
+    background: rgba(0,0,0,0.1);
+}
+
+.icon{
+    position: absolute;
+
+    height: 100%;
+    font-size:65%;
+    width: 20%;
+
+    display:flex;
+    transition: all .6s;
+}
+
+.inner-icon{
+    margin:auto;
+
+}

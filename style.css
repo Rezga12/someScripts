@@ -1,0 +1,478 @@
+@font-face {
+    font-family: bogFontBold;
+    src: url('./fonts/MarkGEO-Bold.woff');
+}
+
+@font-face {
+    font-family: bogFontCapsBold;
+    src: url('./fonts/MarkGEOCAPS-Bold.woff');
+}
+
+@font-face {
+    font-family: bogFontCapsLight;
+    src: url('./fonts/MarkGEOCAPS-Light.woff');
+}
+
+@font-face {
+    font-family: bogFontCapsSemiBold;
+    src: url('./fonts/MarkGEOCAPS-SemiBold.woff');
+}
+@font-face {
+    font-family: bogFontRegular;
+    src: url('./fonts/MarkGEO-Regular.woff');
+}
+
+
+
+
+
+.container {
+    display: grid;
+    grid-template-areas:
+    'messageSection nameOfMessenger nameOfMessenger nameOfMessenger nameOfMessenger'
+    'chatFriends chat chat chat chat'
+    'newMessage messageArea messageArea messageArea messageArea';
+    grid-template-rows: 70px 600px 100px;
+
+    border: 2px solid lightgray;
+}
+.messageSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: messageSection;
+    border-right: 0.2px solid lightgray;
+
+}
+.nameOfMessenger{
+    grid-area: nameOfMessenger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 0.5px solid lightgray;}
+
+.messageSectionText{
+
+    font-size: 24px;
+    font-family: bogFontCapsLight;
+}
+.nameOfMessengerText{
+    font-size: 35px;
+    font-family: bogFontCapsSemiBold;
+}
+
+.chatFriends{
+    overflow-y: scroll;
+    display: grid;
+    grid-area: chatFriends;
+    border-right: 2px solid lightgray;
+    grid-auto-rows: 80px;
+    grid-auto-columns: 250px;
+    grid-template-columns: repeat(auto-fit, auto);
+    background-color: #ededed;
+}
+
+.chat{
+    grid-area: chat;
+    overflow-y: scroll;
+}
+
+.messageArea{
+    display: grid;
+    grid-template-areas: 'messageBox messageBox messageBox messageBox messageButton';
+    grid-area: messageArea;
+    border-top: 2px solid lightgray;
+
+}
+
+.messageBox{
+    grid-area: messageBox;
+    font-size: 25px;
+    font-family: bogFontCapsSemiBold;
+    background-color: #ededed;
+    border: none;
+    padding-left: 10px;
+
+}
+
+.messageBox:focus{
+    outline: none;
+}
+
+.messageButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: messageButton;
+    background-color: #ededed;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+
+
+}
+
+
+.flex-right{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+
+
+.flex-left{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.message{
+    max-width: 40%;
+    padding: 5px;
+    border-radius: 7px;
+
+    background-color: lightblue;
+    font-family: bogFontRegular;
+    word-break: break-all
+
+
+}
+.left-message{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #E8E8E8;
+}
+
+.right-message{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.left-message:hover{
+    background-color: #aaaaaa;
+}
+.right-message:hover{
+    background-color: #53a7bc;
+}
+
+.message-container{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    box-sizing: border-box;
+}
+
+.newMessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: newMessage;
+    border: 1px solid lightgray;
+    background-color: #eae5e5;
+
+}
+
+.newMessageBtn{
+    padding: 7px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 40px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+
+}
+.messageIcon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+    padding-right: 10px;
+    padding-top: 2px;
+    background-image: url('./assets/message-icon.png');
+    background-size: cover;
+}
+.messageText{
+
+    display: inline-block;
+    font-size: 15px;
+    padding-bottom: 2px;
+    font-family: bogFontCapsBold;
+}
+
+.newMessageBtn:hover{
+    background-color: #F47920;
+}
+
+.messageUserName{
+
+    display: inline-block;
+    font-size: 16px;
+    color: grey;
+    font-family: bogFontBold;
+
+}
+.lastMessageSent{
+    padding-top: 5px;
+    display: inline-block;
+    font-size: 13px;
+    color: black;
+    font-family: bogFontCapsLight;
+}
+
+.friendIcon{
+    display: inline-block;
+    background-image: url('./assets/bog-logo.svg');
+    background-size: cover;
+    padding-right: 24px;
+    width: 40px;
+    height: 40px;
+
+
+}
+
+.friendElements{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.friendElements:hover{
+    background-color: #d6c5c5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input {
+    outline: none;
+    border: none;
+}
+
+
+.btn {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+.loginBtn:hover {
+    cursor: pointer;
+}
+
+
+.txt1 {
+    font-family: BPG ExtraSquare Mtavruli;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #999999;
+}
+
+.txt2 {
+    font-family: BPG ExtraSquare Mtavruli;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #4272d7;
+}
+
+.hov1:hover {
+    text-decoration: underline;
+}
+
+
+.wrapLogin {
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 65px;
+    padding-bottom: 50px;
+    width: 500px;
+    background: #E8E8E8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.title {
+    padding-bottom: 33px;
+    display: block;
+    font-family: BPG ExtraSquare Mtavruli;
+    font-size: 35px;
+    color: #333A56;
+    line-height: 1.2;
+    text-align: center;
+}
+.wrapInput {
+    width: 100%;
+    position: relative;
+    background-color: #E8E8E8;
+    border: 1px solid lightgray;
+
+}
+
+
+.input {
+    width: 480px;
+    height: 68px;
+    padding: 0 10px 0 10px;
+    font-size: 22px;
+    background-color: #E8E8E8;
+
+
+
+}
+.containerBtn {
+    padding-top: 20px;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn {
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #F47920;
+    font-family: BPG ExtraSquare Mtavruli;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    background-color: #333333;
+}
+.input{
+    font-family: BPG ExtraSquare Mtavruli;
+}
+
+
+
+.text-center{
+    padding-top: 45px;
+    padding-bottom: 4px;
+    text-align: center;
+
+}
+
+
+
+.modal{
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.modalId{
+    display: none;
+    animation-name: modalOpen;
+    animation-duration: 1s;
+}
+
+@keyframes modalOpen{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+@media screen and (max-width: 540px) {
+    .wrapLogin{
+        width: 300px;
+    }
+    .input{
+        width: 250px;
+    }
+}
+
+.input-2{
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 300px) {
+    .wrapLogin{
+        width: 200px;
+    }
+    .input{
+        width: 170px;
+    }
+}
+
+.container{
+    display: grid;
+}
+
+.sendButton{
+    height: 60px;
+    width: 200px;
+    border-radius: 70px;
+    border: none;
+    background-color: white;
+    font-size: 23px;
+    -webkit-box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 42px -11px rgba(0,0,0,0.75);
+    font-family: bogFontCapsBold;
+}
+
+.sendButton:hover{
+    background-color: #F47920;
+}
+
+.sendButton:focus{
+    outline: none;
+}
